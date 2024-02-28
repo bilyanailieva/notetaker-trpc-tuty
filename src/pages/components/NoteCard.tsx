@@ -39,3 +39,5 @@ export const NoteCard = ({
     </div>
   );
 };
+
+export default NoteCard;
