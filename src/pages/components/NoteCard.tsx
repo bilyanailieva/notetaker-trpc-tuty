@@ -1,11 +1,10 @@
 import { useState } from "react";
-
 import ReactMarkdown from "react-markdown";
 import { RouterOutputs } from "~/utils/api";
 
 type Note = RouterOutputs["note"]["getAll"][0];
 
-export const NoteCard = ({
+const NoteCard = ({
   note,
   onDelete,
 }: {
@@ -23,10 +22,10 @@ export const NoteCard = ({
           } collapse`}
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          <div className="collapse-title text-xl font-bold">{note.title}</div>
+          <div className="collapse-title text-xl font-bold">{note?.title}</div>
           <div className="collapse-content">
             <article className="prose lg:prose-xl">
-              <ReactMarkdown>{note.content}</ReactMarkdown>
+              <ReactMarkdown>{note?.content}</ReactMarkdown>
             </article>
           </div>
         </div>

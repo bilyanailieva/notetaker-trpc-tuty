@@ -2,16 +2,12 @@ import { useSession } from "next-auth/react";
 import Head from "next/head";
 
 import { RouterOutputs, api } from "~/utils/api";
-import { Header } from "./components/Header";
+import Header from "./components/Header";
 import { useState } from "react";
 import NoteEditor from "./components/NoteEditor";
-import { NoteCard } from "./components/NoteCard";
+import NoteCard from "./components/NoteCard";
 
 export default function Home() {
-  const hello = api.post.hello.useQuery({
-    text: "World",
-  });
-
   return (
     <>
       <Head>
